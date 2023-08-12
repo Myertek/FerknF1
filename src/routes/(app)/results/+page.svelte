@@ -15,7 +15,7 @@
 		console.log('Getting race results');
 
 		const response = await fetch(
-			'http://ergast.com/api/f1/' + season + '/' + round + '/results.json'
+			'https://ergast.com/api/f1/' + season + '/' + round + '/results.json'
 		);
 
 		if (response.headers.get('content-type')?.includes('application/json')) {

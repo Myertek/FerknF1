@@ -1,0 +1,89 @@
+create view
+  public.predictions_calc as
+select
+  races.id,
+  races.first,
+  races.second,
+  races.third,
+  races.fourth,
+  races.fifth,
+  predictions.id as pid,
+  predictions.first as pfirst,
+  predictions.second as psecond,
+  predictions.third as pthird,
+  predictions.fourth as pfourth,
+  predictions.fifth as pfifth
+from
+  races
+  join predictions on races.id = predictions.race_id
+where
+  races.first <> 0;
+
+
+  create view
+  public.all_predictions as
+select
+  races.name,
+  races.date_time,
+  races.image_url,
+  races.round,
+  predictions.points_first,
+  predictions.points_second,
+  predictions.points_third,
+  predictions.points_fourth,
+  predictions.points_fifth,
+  predictions.points_total,
+  profiles.username,
+  dr1.code as rfirst,
+  dr1.image_url as rfirst_url,
+  dr2.code as rsecond,
+  dr2.image_url as rsecond_url,
+  dr3.code as rthird,
+  dr3.image_url as rthird_url,
+  dr4.code as rfourth,
+  dr4.image_url as rfourth_url,
+  dr5.code as rfifth,
+  dr5.image_url as rfifth_url,
+  d1.code as pfirst,
+  d1.image_url as first_url,
+  d2.code as psecond,
+  d2.image_url as second_url,
+  d3.code as pthird,
+  d3.image_url as third_url,
+  d4.code as pfourth,
+  d4.image_url as fourth_url,
+  d5.code as pfifth,
+  d5.image_url as fifth_url
+from
+  races
+  join predictions on races.id = predictions.race_id
+  left join profiles on profiles.id = predictions.user_id
+  left join drivers d1 on predictions.first = d1.id
+  left join drivers d2 on predictions.second = d2.id
+  left join drivers d3 on predictions.third = d3.id
+  left join drivers d4 on predictions.fourth = d4.id
+  left join drivers d5 on predictions.fifth = d5.id
+  left join drivers dr1 on races.first = dr1.id
+  left join drivers dr2 on races.second = dr2.id
+  left join drivers dr3 on races.third = dr3.id
+  left join drivers dr4 on races.fourth = dr4.id
+  left join drivers dr5 on races.fifth = dr5.id
+order by
+  races.date_time,
+  predictions.points_total desc;
+
+
+  create view
+  public.get_standings as
+select
+  sum(predictions.points_total) as total,
+  profiles.username
+from
+  predictions
+  join profiles on predictions.user_id = profiles.id
+group by
+  profiles.username
+order by
+  (sum(predictions.points_total)) desc
+limit
+  3;

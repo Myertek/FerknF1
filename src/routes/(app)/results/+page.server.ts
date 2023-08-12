@@ -132,10 +132,10 @@ export const actions = {
 			if (prediction.pfourth == prediction.fourth) {
 				rfourth = 5;
 			} else if (
-				prediction.pthird == prediction.first ||
-				prediction.pthird == prediction.second ||
-				prediction.pthird == prediction.third ||
-				prediction.pthird == prediction.fifth
+				prediction.pfourth == prediction.first ||
+				prediction.pfourth == prediction.second ||
+				prediction.pfourth == prediction.third ||
+				prediction.pfourth == prediction.fifth
 			) {
 				rfourth = 1;
 			} else {

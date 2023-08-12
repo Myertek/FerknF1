@@ -36,6 +36,12 @@
 	export let fourth = null;
 	export let fifth = null;
 
+	export function raceStarted(d: string) {
+		let raceDate = new Date(d);
+		let currentDate = new Date();
+		return raceDate.valueOf() < currentDate.valueOf();
+	}
+
 	export function localDate(d: string) {
 		return new Date(d).toLocaleString();
 	}
@@ -62,7 +68,9 @@
 
 			<div class="collapse-title flex-1 text-xl font-medium">
 				<div class="flex justify-between">
-					<div class="flex-1">Round:{race?.round}</div>
+					<div class="flex-1 {raceStarted(race.date_time) ? 'text-red-500' : 'text-green-500'} ">
+						Round:{race?.round}
+					</div>
 					<div>{race?.name}</div>
 				</div>
 				<div class="flex">
@@ -84,6 +92,7 @@
 								<div class="flex">{race.name}</div>
 								<div class="form-control w-full max-w-xs">
 									<select
+										disabled={raceStarted(race.date_time)}
 										bind:value={race.predictions[0].first}
 										name="first"
 										class="select select-bordered"
@@ -98,6 +107,7 @@
 								</div>
 								<div class="form-control w-full max-w-xs">
 									<select
+										disabled={raceStarted(race.date_time)}
 										bind:value={race.predictions[0].second}
 										name="second"
 										class="select select-bordered"
@@ -112,6 +122,7 @@
 								</div>
 								<div class="form-control w-full max-w-xs">
 									<select
+										disabled={raceStarted(race.date_time)}
 										bind:value={race.predictions[0].third}
 										name="third"
 										class="select select-bordered"
@@ -126,6 +137,7 @@
 								</div>
 								<div class="form-control w-full max-w-xs">
 									<select
+										disabled={raceStarted(race.date_time)}
 										bind:value={race.predictions[0].fourth}
 										name="fourth"
 										class="select select-bordered"
@@ -140,6 +152,7 @@
 								</div>
 								<div class="form-control w-full max-w-xs">
 									<select
+										disabled={raceStarted(race.date_time)}
 										bind:value={race.predictions[0].fifth}
 										name="fifth"
 										class="select select-bordered"
@@ -153,7 +166,11 @@
 									</select>
 								</div>
 								<div class="card-actions justify-end">
-									<button type="submit" class="btn btn-primary">Update</button>
+									<button
+										disabled={raceStarted(race.date_time)}
+										type="submit"
+										class="btn btn-primary">Update</button
+									>
 								</div>
 							</div>
 						</div>
@@ -166,7 +183,11 @@
 								<input type="number" bind:value={race.id} name="race_id" hidden />
 								<div class="flex">{race.name}</div>
 								<div class="form-control w-full max-w-xs">
-									<select name="first" class="select select-bordered">
+									<select
+										disabled={raceStarted(race.date_time)}
+										name="first"
+										class="select select-bordered"
+									>
 										<option disabled selected>Pick 1st Place</option>
 										{#each data.drivers as driver}
 											<option value={driver.id}>
@@ -176,7 +197,11 @@
 									</select>
 								</div>
 								<div class="form-control w-full max-w-xs">
-									<select name="second" class="select select-bordered">
+									<select
+										disabled={raceStarted(race.date_time)}
+										name="second"
+										class="select select-bordered"
+									>
 										<option disabled selected>Pick 2nd Place</option>
 										{#each data.drivers as driver}
 											<option value={driver.id}>
@@ -186,7 +211,11 @@
 									</select>
 								</div>
 								<div class="form-control w-full max-w-xs">
-									<select name="third" class="select select-bordered">
+									<select
+										disabled={raceStarted(race.date_time)}
+										name="third"
+										class="select select-bordered"
+									>
 										<option disabled selected>Pick 3rd Place</option>
 										{#each data.drivers as driver}
 											<option value={driver.id}>
@@ -196,7 +225,11 @@
 									</select>
 								</div>
 								<div class="form-control w-full max-w-xs">
-									<select name="fourth" class="select select-bordered">
+									<select
+										disabled={raceStarted(race.date_time)}
+										name="fourth"
+										class="select select-bordered"
+									>
 										<option disabled selected>Pick 4th Place</option>
 										{#each data.drivers as driver}
 											<option value={driver.id}>
@@ -206,7 +239,11 @@
 									</select>
 								</div>
 								<div class="form-control w-full max-w-xs">
-									<select name="fifth" class="select select-bordered">
+									<select
+										disabled={raceStarted(race.date_time)}
+										name="fifth"
+										class="select select-bordered"
+									>
 										<option disabled selected>Pick 5th Place</option>
 										{#each data.drivers as driver}
 											<option value={driver.id}>
@@ -216,7 +253,11 @@
 									</select>
 								</div>
 								<div class="card-actions justify-end">
-									<button type="submit" class="btn btn-primary">Create</button>
+									<button
+										disabled={raceStarted(race.date_time)}
+										type="submit"
+										class="btn btn-primary">Create</button
+									>
 								</div>
 							</div>
 						</div>

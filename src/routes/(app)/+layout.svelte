@@ -46,7 +46,7 @@
 				<label tabindex="-1" class="btn btn-ghost btn-circle avatar">
 					{#if session}
 						<div class="w-10 rounded-full">
-							<img src={profile.avatar_url} alt="FF1" />
+							<img src={profile?.avatar_url} alt="FF1" />
 						</div>
 					{:else}
 						<div class="avatar online placeholder">

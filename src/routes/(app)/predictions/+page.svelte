@@ -13,7 +13,7 @@
 	}
 </script>
 
-<div class="overflow-y-auto">
+<div class="overflow-y-auto mt-20">
 	<table class="table table-pin-rows">
 		<!-- head -->
 		<thead class="font-bold text-slate-400 text-sm">

@@ -17,7 +17,7 @@
 			<p class="mb-5">Hello and welcome to another year of the Ferk 'n' F1 trophy.</p>
 
 			<div class="flex-1">
-				<a href="/login" class="btn btn-primary normal-case text-xl">Get Started</a>
+				<a href="/login" class="btn btn-primary normal-case text-xl">Let's Go!</a>
 			</div>
 		</div>
 	</div>

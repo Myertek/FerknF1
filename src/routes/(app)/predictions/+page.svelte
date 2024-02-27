@@ -11,6 +11,12 @@
 			return false;
 		}
 	}
+
+	export function raceStarted(d: string) {
+		let raceDate = new Date(d);
+		let currentDate = new Date();
+		return raceDate.valueOf() < currentDate.valueOf();
+	}
 </script>
 
 <div class="overflow-y-auto mt-20">
@@ -89,7 +95,11 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								<div class="">{prediction.pfirst}</div>
+								{#if raceStarted(prediction.date_time)}
+									<div class="">{prediction.pfirst}</div>
+								{:else}
+									<div>***</div>
+								{/if}
 								<div class="text-sm opacity-50">{prediction.points_first}</div>
 							</div>
 						</div>
@@ -97,7 +107,11 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								<div class="">{prediction.psecond}</div>
+								{#if raceStarted(prediction.date_time)}
+									<div class="">{prediction.psecond}</div>
+								{:else}
+									<div>***</div>
+								{/if}
 								<div class="text-sm opacity-50">{prediction.points_second}</div>
 							</div>
 						</div>
@@ -105,7 +119,11 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								<div class="">{prediction.pthird}</div>
+								{#if raceStarted(prediction.date_time)}
+									<div class="">{prediction.pthird}</div>
+								{:else}
+									<div>***</div>
+								{/if}
 								<div class="text-sm opacity-50">{prediction.points_third}</div>
 							</div>
 						</div>
@@ -113,7 +131,11 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								<div class="">{prediction.pfourth}</div>
+								{#if raceStarted(prediction.date_time)}
+									<div class="">{prediction.pfourth}</div>
+								{:else}
+									<div>***</div>
+								{/if}
 								<div class="text-sm opacity-50">{prediction.points_fourth}</div>
 							</div>
 						</div>
@@ -121,7 +143,11 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								<div class="">{prediction.pfifth}</div>
+								{#if raceStarted(prediction.date_time)}
+									<div class="">{prediction.pfifth}</div>
+								{:else}
+									<div>***</div>
+								{/if}
 								<div class="text-sm opacity-50">{prediction.points_fifth}</div>
 							</div>
 						</div>

@@ -14,7 +14,7 @@
 	<div class="hero-content text-center text-neutral-content">
 		<div class="max-w-md">
 			<h1 class="mb-5 text-5xl font-bold">Ferk 'n' F1 Trophy</h1>
-			<p class="mb-5">Hello and welcome to another year of the Ferk 'n' F1 trophy.</p>
+			<p class="mb-5">Hello and welcome to 2024 Ferk 'n' F1 trophy.</p>
 
 			<div class="flex-1">
 				<a href="/login" class="btn btn-primary normal-case text-xl">Let's Go!</a>

@@ -95,10 +95,10 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								{#if raceStarted(prediction.date_time)}
-									<div class="">{prediction.pfirst}</div>
-								{:else}
+								{#if !raceStarted(prediction.date_time) && data.profile.username !== prediction.username}
 									<div>***</div>
+								{:else}
+									<div class="">{prediction.pfirst}</div>
 								{/if}
 								<div class="text-sm opacity-50">{prediction.points_first}</div>
 							</div>
@@ -107,10 +107,10 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								{#if raceStarted(prediction.date_time)}
-									<div class="">{prediction.psecond}</div>
-								{:else}
+								{#if !raceStarted(prediction.date_time) && data.profile.username !== prediction.username}
 									<div>***</div>
+								{:else}
+									<div class="">{prediction.psecond}</div>
 								{/if}
 								<div class="text-sm opacity-50">{prediction.points_second}</div>
 							</div>
@@ -119,10 +119,10 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								{#if raceStarted(prediction.date_time)}
-									<div class="">{prediction.pthird}</div>
-								{:else}
+								{#if !raceStarted(prediction.date_time) && data.profile.username !== prediction.username}
 									<div>***</div>
+								{:else}
+									<div class="">{prediction.pthird}</div>
 								{/if}
 								<div class="text-sm opacity-50">{prediction.points_third}</div>
 							</div>
@@ -131,10 +131,10 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								{#if raceStarted(prediction.date_time)}
-									<div class="">{prediction.pfourth}</div>
-								{:else}
+								{#if !raceStarted(prediction.date_time) && data.profile.username !== prediction.username}
 									<div>***</div>
+								{:else}
+									<div class="">{prediction.pfourth}</div>
 								{/if}
 								<div class="text-sm opacity-50">{prediction.points_fourth}</div>
 							</div>
@@ -143,10 +143,10 @@
 					<td>
 						<div class="flex items-center">
 							<div>
-								{#if raceStarted(prediction.date_time)}
-									<div class="">{prediction.pfifth}</div>
-								{:else}
+								{#if !raceStarted(prediction.date_time) && data.profile.username !== prediction.username}
 									<div>***</div>
+								{:else}
+									<div class="">{prediction.pfifth}</div>
 								{/if}
 								<div class="text-sm opacity-50">{prediction.points_fifth}</div>
 							</div>

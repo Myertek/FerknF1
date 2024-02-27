@@ -93,7 +93,7 @@ export const actions = {
 			let rtotal = 0;
 
 			if (prediction.pfirst == prediction.first) {
-				rfirst = 11;
+				rfirst = 13;
 			} else if (
 				prediction.pfirst == prediction.second ||
 				prediction.pfirst == prediction.third ||
@@ -106,7 +106,7 @@ export const actions = {
 			}
 
 			if (prediction.psecond == prediction.second) {
-				rsecond = 9;
+				rsecond = 11;
 			} else if (
 				prediction.psecond == prediction.first ||
 				prediction.psecond == prediction.third ||
@@ -118,7 +118,7 @@ export const actions = {
 				rsecond = 0;
 			}
 			if (prediction.pthird == prediction.third) {
-				rthird = 7;
+				rthird = 9;
 			} else if (
 				prediction.pthird == prediction.first ||
 				prediction.pthird == prediction.second ||
@@ -130,7 +130,7 @@ export const actions = {
 				rthird = 0;
 			}
 			if (prediction.pfourth == prediction.fourth) {
-				rfourth = 5;
+				rfourth = 7;
 			} else if (
 				prediction.pfourth == prediction.first ||
 				prediction.pfourth == prediction.second ||
@@ -142,7 +142,7 @@ export const actions = {
 				rfourth = 0;
 			}
 			if (prediction.pfifth == prediction.fifth) {
-				rfifth = 3;
+				rfifth = 5;
 			} else if (
 				prediction.pfifth == prediction.first ||
 				prediction.pfifth == prediction.second ||

@@ -67,7 +67,7 @@
 	<div class="flex-1 mt-2">
 		<button
 			type="submit"
-			on:click={getData('2023', race.round, race.id)}
+			on:click={getData('2024', race.round, race.id)}
 			class="flex-1 btn btn-primary">Get Results for round {race.round} {race.name}</button
 		>
 	</div>
